@@ -5,6 +5,7 @@ Release:        8.1
 Summary:        An XML parser library
 Group:          System/Libraries
 Source:         http://download.sourceforge.net/expat/expat-%{version}.tar.gz
+Source1001: packaging/expat.manifest 
 Patch0:         expat-2.0.1-CVE-2009-3720.diff
 Patch1:         expat-2.0.1-confcxx.patch
 
@@ -44,6 +45,7 @@ Documentation for the expat package
 %patch0 -p0 -b .CVE-2009-3720
 %patch1 -p1 -b .confcxx
 %build
+cp %{SOURCE1001} .
 rm -rf autom4te*.cache
 cp `aclocal --print-ac-dir`/libtool.m4 conftools || exit 1
 libtoolize --copy --force --automake && aclocal && autoheader && autoconf
@@ -74,17 +76,20 @@ rm -rf %{buildroot}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest expat.manifest
 %defattr(-,root,root,-)
 %doc COPYING
 %{_bindir}/*
 /%{_lib}/lib*.so.*
 
 %files devel
+%manifest expat.manifest
 %defattr(-,root,root)
 %{_libdir}/lib*.so
 %{_includedir}/*.h
 
 %files doc
+%manifest expat.manifest
 %defattr(-,root,root,-)
 %doc %{_mandir}/*/*
 %doc README
