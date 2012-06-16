@@ -1,0 +1,26 @@
+* Sat Jun 16 2012 Anas Nashif <anas.nashif@intel.com> 130811f
+- Update to 2.1.0
+- Remove applied patches
+
+* Wed May 30 2012 Ryan Ware <ryan.r.ware@intel.com> ce69e98
+- Add default Smack manifest for expat.spec
+
+* Wed May 23 2012 Anas Nashif <anashif@tizendev.org> 9de7f3a
+- Merge "CVE-2009-3560"
+- Merge "CVE-2009-3720"
+
+* Sat May 19 2012 Zhang Qiang <qiang.z.zhang@intel.com> c91806e
+- Sync code from obs
+
+* Tue May 15 2012 Anas Nashif <anas.nashif@intel.com> eb6c935
+- CVE-2009-3560
+- CVE-2009-3720
+
+* Sun Apr 29 2012 Kim Kibum <kb0929.kim@samsung.com> c4e0b1d
+- upload tizen1.0 source
+
+* Fri Jan 06 2012 Kibum Kim <kb0929.kim@samsung.com> b146a9d
+- Git init
+[ Eunkyoung Kim ]
+- Initial empty repository
+
