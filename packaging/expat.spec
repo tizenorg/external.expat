@@ -93,4 +93,3 @@ rm -rf %{buildroot}
 %doc %{_mandir}/*/*
 %doc README
 %doc Changes doc examples
-
