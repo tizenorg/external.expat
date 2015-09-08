@@ -3,7 +3,7 @@ Version:        2.0.1
 Release:        8
 Summary:        An XML parser library
 Group:          System/Libraries
-Source:         http://download.sourceforge.net/expat/expat-%{version}.tar.gz
+Source:         %{name}-%{version}.tar.gz
 Patch0:         expat-2.0.1-CVE-2009-3720.diff
 Patch1:         expat-2.0.1-confcxx.patch
 
@@ -52,6 +52,9 @@ make %{?_smp_mflags}
 
 %install
 
+mkdir -p %{buildroot}/usr/share/license
+cp COPYING %{buildroot}/usr/share/license/%{name}
+
 rm -f examples/*.dsp
 chmod 644 README COPYING Changes doc/* examples/*
 
@@ -73,10 +76,12 @@ rm -rf %{buildroot}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest expat.manifest
 %defattr(-,root,root,-)
 %doc COPYING
 %{_bindir}/*
 /%{_lib}/lib*.so.*
+/usr/share/license/%{name}
 
 %files devel
 %defattr(-,root,root)
