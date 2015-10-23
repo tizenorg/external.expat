@@ -66,9 +66,6 @@ mv %{buildroot}/%{_lib}/libexpat.so %{buildroot}%{_libdir}
 lib=`echo %{buildroot}/%{_lib}/libexpat.so.*.*`
 ln -sf ../../%{_lib}/`basename ${lib}` %{buildroot}%{_libdir}/libexpat.so
 
-%check
-make check
-
 %clean
 rm -rf %{buildroot}
 
